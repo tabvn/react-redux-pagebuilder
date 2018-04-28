@@ -1,9 +1,0 @@
-web/node_modules
-web/package-lock.json
-.idea
-.idea/*
-.idea/workspace.xml
-.idea/tasks.xml
-.idea/dictionaries
-.idea/vcs.xml
-.idea/jsLibraryMappings.xml
