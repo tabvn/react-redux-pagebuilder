@@ -1,0 +1,33 @@
+@import url(grid.css);
+body {
+  font-size: 14px;
+  color: black;
+  padding: 0;
+  margin: 0; }
+
+* {
+  box-sizing: border-box; }
+
+.app-header {
+  background: rgba(0, 0, 0, 0.05);
+  padding: 20px; }
+
+.app-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+  .app-menu ul li {
+    list-style: none;
+    margin: 0;
+    padding: 0 10px;
+    display: inline-block;
+    cursor: pointer; }
+    .app-menu ul li:first-child {
+      padding-left: 0; }
+    .app-menu ul li:last-child {
+      padding-right: 0; }
+    .app-menu ul li a {
+      color: black;
+      text-decoration: none; }
+
+/*# sourceMappingURL=app.css.map */
