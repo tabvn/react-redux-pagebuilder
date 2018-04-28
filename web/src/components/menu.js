@@ -19,15 +19,13 @@ class Menu extends Component {
     const {menu} = this.props
     const {items} = menu
 
-    console.log('Menu items', items)
-
     return (
       <div className={'app-menu'}>
         <ul className={'menu'}>
           {
             items.map((link, index) => {
               return (
-                <li key={index} onClick={() => this._openPage(link)}
+                <li onClick={() => this._openPage(link)}
                     key={index}><a>{link.title}</a></li>
               )
             })
