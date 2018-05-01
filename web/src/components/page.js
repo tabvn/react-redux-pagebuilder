@@ -1,7 +1,7 @@
 import React,{Component} from 'react'
 import {connect} from 'react-redux'
 import _ from 'lodash'
-import RenderPageElement from './elements/render-page-element'
+import Builder from './elements/builder'
 
 class Page extends Component{
 
@@ -36,7 +36,7 @@ class Page extends Component{
             pageBody
           }
         </div>
-        <RenderPageElement page={page} />
+        <Builder page={page} />
 
       </div>
     )

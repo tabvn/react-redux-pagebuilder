@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import _ from 'lodash'
 import styled from 'styled-components'
 
@@ -57,6 +57,7 @@ const Row = styled.div `
 
 const Column = styled.div `
   border: 1px solid rgba(0,0,0,0.04);
+  min-height: 30px;
 `
 
 class BuilderElement extends Component {
@@ -70,7 +71,7 @@ class BuilderElement extends Component {
     this._renderColumnElement = this._renderColumnElement.bind(this)
   }
 
-  _renderColumnElement (parent, columnElement) {
+  _renderColumnElement (columnElement) {
 
     const {page} = this.props
     const allElements = _.get(page, 'elements', [])
@@ -78,8 +79,8 @@ class BuilderElement extends Component {
     const childrenElements = allElements.filter(
       (e) => e.parent === columnElement.id)
 
-    return childrenElements.map((e) => {
-      return this._renderElement(e)
+    return childrenElements.map((e, index) => {
+      return <Fragment key={index}>{this._renderElement(e)}</Fragment>
     })
 
   }
@@ -125,8 +126,7 @@ class BuilderElement extends Component {
           }
 
           return <Column className={_.join(classes, ' ')}
-                         key={index}>{this._renderColumnElement(element,
-            column)}</Column>
+                         key={index}>{this._renderColumnElement(column)}</Column>
         })
       }
     </Row>
@@ -193,7 +193,7 @@ class BuilderElement extends Component {
 
       case 'column':
 
-        return `i 'm the column need to be here...`
+       output = this._renderColumnElement(element)
 
         break
 
@@ -210,11 +210,11 @@ class BuilderElement extends Component {
     const {element} = this.props
 
     return (
-      <div className={'builder-element'}>
+      <Fragment>
         {
           this._renderElement(element)
         }
-      </div>
+      </Fragment>
     )
   }
 }

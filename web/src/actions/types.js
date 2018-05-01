@@ -1,3 +1,3 @@
 // Page types
 
-export const GET_PAGES = 'page/get_pages'
+export const UPDATE_PAGE = 'page/update_page'
